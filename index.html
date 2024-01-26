@@ -1,28 +1,39 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connect</title>
-    <meta name="description" content="A social media and real time chat application.">
-    <link rel="icon" href="/favicon.ico" sizes="48x48">
-    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
-    <link rel="manifest" href="/manifest.json"/>
-    <meta name="theme-color" content="#ffffff">
-</head>
-<body>
-  <h1>Offline PWA Example</h1>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-    }
-  </script>
-</body>
+    <meta
+      name="description"
+      content="A social media and real time chat application."
+    />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#ffffff" />
+    <script defer type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <h1>Offline PWA Example</h1>
+    <button id="notifications">notifications</button>
+    <button id="new-notification">generate notification</button>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((registration) => {
+            console.log(
+              "Service Worker registered with scope:",
+              registration.scope
+            );
+          })
+          .catch((error) => {
+            console.error("Service Worker registration failed:", error);
+          });
+      }
+      new Notification("hello world");
+    </script>
+  </body>
 </html>
