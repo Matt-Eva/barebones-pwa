@@ -240,9 +240,9 @@ const randomNotification = () => {
     body: notifBody,
     icon: notifImg,
   };
-  const notification = new Notification(notifTitle, options);
+  const notification = new Notification("Hello World");
   console.log(notification);
-  //   setTimeout(randomNotification, 10000);
+  setTimeout(randomNotification, 10000);
 };
 
 button.addEventListener("click", () => {
