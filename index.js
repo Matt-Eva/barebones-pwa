@@ -237,10 +237,9 @@ const randomNotification = () => {
   const notifBody = `Created by ${games[randomItem].author}.`;
   const notifImg = `demo-icon.jpg`;
   const options = {
-    body: notifBody,
-    icon: notifImg,
+    vibrate: [200, 100, 200],
   };
-  const notification = new Notification("Hello World");
+  const notification = new Notification("Hello World", options);
   console.log(notification);
   setTimeout(randomNotification, 10000);
 };
