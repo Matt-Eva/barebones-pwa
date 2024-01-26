@@ -227,10 +227,10 @@ var games = [
 
 const button = document.getElementById("notifications");
 const generateNotification = document.getElementById("new-notification");
-const n = new Notification("Hello world");
 console.log(generateNotification);
 
 const randomNotification = () => {
+  document.body.append("notified");
   console.log("notifying");
   const randomItem = Math.floor(Math.random() * games.length);
   const notifTitle = games[randomItem].name;
